@@ -1,0 +1,30 @@
+name: Validate macOS native bundle
+
+on:
+  push:
+    tags: ["v*"]
+  workflow_dispatch:
+
+jobs:
+  native-bundle:
+    # FoundationModels requires the macOS 26 SDK/Xcode. This compiles the bridge;
+    # it does not invoke Apple Intelligence in CI.
+    runs-on: [self-hosted, macos-26]
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate package layout and manifest
+        run: scripts/validate-package.sh
+      - name: Build FoundationModels bridge
+        run: zsh Packages/net.orpine.gryphprime.vrchat-outfit-tools/AppleIntelligence/build-macos.sh
+      - name: Build VPM archive and checksum
+        run: |
+          archive="$(scripts/build-vpm-zip.sh)"
+          shasum -a 256 "$archive" > "$archive.sha256"
+      - name: Upload native VPM archive
+        uses: actions/upload-artifact@v4
+        with:
+          name: macos-vpm-package
+          path: |
+            dist/*.zip
+            dist/*.zip.sha256
+          if-no-files-found: error

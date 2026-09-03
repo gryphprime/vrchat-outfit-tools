@@ -1,0 +1,28 @@
+name: Verify VPM package
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+    tags: ["v*"]
+  workflow_dispatch:
+
+jobs:
+  verify:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Validate package layout and manifest
+        run: scripts/validate-package.sh
+      - name: Build VPM archive and checksum
+        run: |
+          archive="$(scripts/build-vpm-zip.sh)"
+          sha256sum "$archive" > "$archive.sha256"
+      - name: Upload VPM archive
+        uses: actions/upload-artifact@v4
+        with:
+          name: vpm-package
+          path: |
+            dist/*.zip
+            dist/*.zip.sha256
+          if-no-files-found: error

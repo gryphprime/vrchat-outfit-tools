@@ -1,0 +1,13 @@
+{
+  "name": "net.orpine.gryphprime.vrchat-outfit-tools.Editor",
+  "references": [
+    "net.orpine.gryphprime.vrchat-outfit-tools.Runtime",
+    "VRC.SDK3A",
+    "VRC.SDKBase",
+    "VRC.SDKBase.Editor",
+    "nadena.dev.modular-avatar.core"
+  ],
+  "includePlatforms": [
+    "Editor"
+  ]
+}
