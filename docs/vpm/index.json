@@ -6,5 +6,31 @@
   },
   "id": "c5146a10-0798-486a-9c7f-5ff8f5cbe008",
   "url": "https://gryphprime.github.io/vrchat-outfit-tools/index.json",
-  "packages": {}
+  "packages": {
+    "net.orpine.gryphprime.vrchat-outfit-tools": {
+      "versions": {
+        "0.1.0": {
+          "name": "net.orpine.gryphprime.vrchat-outfit-tools",
+          "version": "0.1.0",
+          "displayName": "VRChat Outfit Tools",
+          "description": "Modular Avatar tools for generating and organizing outfit-toggle menus.",
+          "unity": "2022.3",
+          "author": {
+            "name": "gryphprime",
+            "email": "gryphprime@users.noreply.github.com",
+            "url": "https://github.com/gryphprime"
+          },
+          "url": "https://github.com/gryphprime/vrchat-outfit-tools/releases/download/v0.1.0/net.orpine.gryphprime.vrchat-outfit-tools-0.1.0.zip",
+          "vpmDependencies": {
+            "com.vrchat.avatars": ">=3.10.4 <4.0.0-a",
+            "nadena.dev.modular-avatar": ">=1.18.3 <2.0.0-a"
+          },
+          "legacyFolders": {
+            "Assets\\OutfitToggleGenerator": ""
+          },
+          "zipSHA256": "2dc14bc8d26db1883bd8d484c14f260df6443999584fff3cc27890bc3897149d"
+        }
+      }
+    }
+  }
 }
