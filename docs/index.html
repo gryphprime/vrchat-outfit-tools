@@ -1,0 +1,236 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#11151a">
+  <meta name="description" content="A beginner-friendly guide to Avatar Wardrobe and Avatar Outfit Toggles for VRChat avatars in Unity.">
+  <title>Avatar Wardrobe &amp; Outfit Toggles · User Guide</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to guide</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="brand" href="#top" aria-label="Avatar Wardrobe guide home">
+        <span class="brand-mark" aria-hidden="true">✦</span>
+        <span>
+          <strong>Avatar Wardrobe</strong>
+          <small>USER GUIDE</small>
+        </span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-nav">
+        <span class="sr-only">Open guide menu</span>
+        <span aria-hidden="true">☰</span>
+      </button>
+      <nav id="site-nav" class="top-nav" aria-label="Primary navigation">
+        <a href="#start">Start here</a>
+        <a href="#wardrobe">Avatar Wardrobe</a>
+        <a href="#toggles">Outfit Toggles</a>
+        <a href="#troubleshooting">Troubleshooting</a>
+      </nav>
+    </div>
+  </header>
+
+  <div id="top" class="page-shell">
+    <aside class="sidebar" aria-label="Guide sections">
+      <div class="sidebar-label">In this guide</div>
+      <nav class="side-nav">
+        <a class="side-link is-active" href="#start"><span>01</span> Start here</a>
+        <a class="side-link" href="#before-you-begin"><span>02</span> Before you begin</a>
+        <a class="side-link" href="#wardrobe"><span>03</span> Add an outfit</a>
+        <a class="side-link" href="#toggles"><span>04</span> Make outfit toggles</a>
+        <a class="side-link" href="#result"><span>05</span> What gets created</a>
+        <a class="side-link" href="#troubleshooting"><span>06</span> Fix common issues</a>
+        <a class="side-link" href="#glossary"><span>07</span> Small glossary</a>
+      </nav>
+      <div class="sidebar-note">
+        <span class="note-dot" aria-hidden="true"></span>
+        <p><strong>Good to know</strong><br>Most changes can be undone with Unity’s normal Undo command.</p>
+      </div>
+    </aside>
+
+    <main id="main-content">
+      <section id="start" class="hero section-anchor" aria-labelledby="hero-title">
+        <div class="eyebrow"><span class="eyebrow-line"></span> VRCHAT · UNITY · BEGINNER FRIENDLY</div>
+        <h1 id="hero-title">Dress your avatar<br><em>without the guesswork.</em></h1>
+        <p class="hero-copy">Avatar Wardrobe helps you find and add compatible outfits. Avatar Outfit Toggles turns clothing and accessories into simple menu buttons you can use in VRChat.</p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#wardrobe">I want to add an outfit <span aria-hidden="true">↗</span></a>
+          <a class="button button-secondary" href="#toggles">I want outfit toggles <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-proof" aria-label="Guide highlights">
+          <div><strong>2</strong><span>tools explained</span></div>
+          <div><strong>4</strong><span>steps to your first outfit</span></div>
+          <div><strong>↶</strong><span>Undo-friendly workflow</span></div>
+        </div>
+      </section>
+
+      <section class="flow-card" aria-labelledby="flow-title">
+        <div class="flow-intro">
+          <div class="eyebrow">THE BIG PICTURE</div>
+          <h2 id="flow-title">One outfit, three easy moments</h2>
+          <p>You can use either tool by itself. Together, they make a comfortable workflow: find something, add it, then decide how you want to control it.</p>
+        </div>
+        <div class="flow-steps">
+          <div class="flow-step">
+            <span class="step-number">01</span>
+            <div><strong>Browse</strong><p>See what is in your project and check whether it matches your avatar.</p></div>
+          </div>
+          <span class="flow-arrow" aria-hidden="true">→</span>
+          <div class="flow-step">
+            <span class="step-number">02</span>
+            <div><strong>Add</strong><p>Install the outfit on the avatar instance you have open in your scene.</p></div>
+          </div>
+          <span class="flow-arrow" aria-hidden="true">→</span>
+          <div class="flow-step">
+            <span class="step-number">03</span>
+            <div><strong>Toggle</strong><p>Generate a submenu so you can show or hide pieces in VRChat.</p></div>
+          </div>
+        </div>
+      </section>
+
+      <section id="before-you-begin" class="content-section section-anchor" aria-labelledby="before-title">
+        <div class="section-kicker"><span>02</span> BEFORE YOU BEGIN</div>
+        <div class="section-heading">
+          <h2 id="before-title">A short setup check</h2>
+          <p>Have these pieces in place before opening the tools. If you are following someone else’s avatar package, they may already be installed for you.</p>
+        </div>
+        <div class="check-grid">
+          <article class="check-card"><span class="check-icon" aria-hidden="true">✓</span><div><h3>Unity 2022.3 or newer</h3><p>Open the same Unity project that contains your avatar and clothing assets.</p></div></article>
+          <article class="check-card"><span class="check-icon" aria-hidden="true">✓</span><div><h3>VRChat Avatars 3.10.4 or newer</h3><p>This is the VRChat avatar package the tools expect to work with.</p></div></article>
+          <article class="check-card"><span class="check-icon" aria-hidden="true">✓</span><div><h3>Modular Avatar 1.18.3 or newer</h3><p>It builds the menu and toggle pieces into your avatar when you upload it.</p></div></article>
+          <article class="check-card"><span class="check-icon" aria-hidden="true">✓</span><div><h3>An avatar open in the scene</h3><p>Use the copy of the avatar in Unity’s <strong>Hierarchy</strong>, not only the saved asset in the Project window.</p></div></article>
+        </div>
+        <div class="callout callout-tip">
+          <span class="callout-icon" aria-hidden="true">i</span>
+          <p><strong>Which avatar should I select?</strong> Select the avatar you are currently editing in the scene. Avatar Wardrobe installs onto that scene copy; it does not quietly change the original prefab asset.</p>
+        </div>
+      </section>
+
+      <section id="wardrobe" class="content-section section-anchor" aria-labelledby="wardrobe-title">
+        <div class="section-kicker"><span>03</span> AVATAR WARDROBE</div>
+        <div class="section-heading split-heading">
+          <div><h2 id="wardrobe-title">Add an outfit in four steps</h2><p>Wardrobe is a local browser window inside your Unity workflow. It searches the clothing already available in your project and helps you make a safe choice.</p></div>
+          <span class="section-tag">FIND · CHECK · ADD</span>
+        </div>
+
+        <div class="instruction-list">
+          <article class="instruction-row">
+            <div class="instruction-number">01</div>
+            <div class="instruction-body"><h3>Select the avatar in the Hierarchy</h3><p>Click the avatar instance in the scene. If you click a clothing item under it, the tool can follow that selection, but selecting the avatar itself is the clearest place to start.</p><div class="ui-path"><span>Hierarchy</span><b>→</b><span>Your avatar instance</span></div></div>
+          </article>
+          <article class="instruction-row">
+            <div class="instruction-number">02</div>
+            <div class="instruction-body"><h3>Open Avatar Wardrobe</h3><p>From Unity’s top menu, choose <strong>Tools → Avatar Wardrobe</strong>. Check the <strong>Install target</strong> field, then click <strong>Open Wardrobe</strong>. Keep the small Unity window open while you browse.</p><div class="ui-path"><span>Tools</span><b>→</b><span>Avatar Wardrobe</span><b>→</b><span>Open Wardrobe</span></div></div>
+          </article>
+          <article class="instruction-row">
+            <div class="instruction-number">03</div>
+            <div class="instruction-body"><h3>Search and check the outfit</h3><p>Use the search box for an outfit name, color variant, or folder path. Narrow the list with <strong>Compatible</strong>, <strong>Installed</strong>, or a category such as <strong>Outfits</strong>. Open a card to review compatibility, parts, materials, and performance details.</p><div class="label-row"><span class="label label-good">✓ Compatible</span><span class="label label-neutral">? Untested</span><span class="label label-warn">! Not compatible</span></div></div>
+          </article>
+          <article class="instruction-row instruction-row-last">
+            <div class="instruction-number">04</div>
+            <div class="instruction-body"><h3>Click “Add to Avatar”</h3><p>Choose the version you want, then click <strong>Add to Avatar</strong>. Leave <strong>Create toggles</strong> checked if you want Wardrobe to make controls automatically. The new outfit is added to the selected scene avatar and becomes the default outfit. Its main menu control is labeled <strong>Wear This Outfit</strong>.</p><div class="callout callout-warn"><span class="callout-icon" aria-hidden="true">!</span><p><strong>Use Advanced install carefully.</strong> It allows an outfit marked as incompatible to be added anyway. Try a compatible option first.</p></div></div>
+          </article>
+        </div>
+
+        <details class="expandable">
+          <summary>What do “Index changes” and “Rebuild” mean?</summary>
+          <div class="details-content"><p>Wardrobe keeps a searchable list of the prefab assets in your project. <strong>Index changes</strong> updates that list quickly after you add or change clothing. <strong>Rebuild</strong> scans everything again and is useful when a result is missing or the list seems stale. You do not need to run either command every time you open the tool.</p></div>
+        </details>
+      </section>
+
+      <section id="toggles" class="content-section section-anchor" aria-labelledby="toggles-title">
+        <div class="section-kicker"><span>04</span> AVATAR OUTFIT TOGGLES</div>
+        <div class="section-heading split-heading">
+          <div><h2 id="toggles-title">Turn clothing into menu buttons</h2><p>Use this when an outfit is already in your scene, or when you want to regenerate its controls. You do not need to hand-write animations.</p></div>
+          <span class="section-tag">SELECT · GENERATE · TEST</span>
+        </div>
+
+        <div class="two-column-guide">
+          <div class="selection-panel">
+            <div class="panel-label">SELECT IN THE HIERARCHY</div>
+            <div class="tree" aria-label="Example Hierarchy selection">
+              <div class="tree-line tree-muted"><span>⌄</span> My Avatar</div>
+              <div class="tree-line tree-muted indent-1"><span>⌄</span> Body</div>
+              <div class="tree-line tree-selected indent-1"><span>◇</span> Casual Outfit <b>← select this</b></div>
+              <div class="tree-line tree-muted indent-2"><span>◇</span> Jacket</div>
+              <div class="tree-line tree-muted indent-2"><span>◇</span> Shoes</div>
+            </div>
+            <p class="panel-footnote">Select the top-level outfit object. You can select more than one outfit if they are under the same avatar.</p>
+          </div>
+          <div class="toggle-steps">
+            <article class="mini-step"><span>1</span><div><h3>Pick the outfit root</h3><p>Click the large parent object for the outfit, not the avatar root and not every individual mesh piece.</p></div></article>
+            <article class="mini-step"><span>2</span><div><h3>Create or update the toggles</h3><p>Choose <strong>Tools → Avatar Outfit Toggles → Create or Update Outfit Toggles</strong>. You can also right-click the selection in the Hierarchy and open <strong>Avatar Outfit Toggles</strong>.</p></div></article>
+            <article class="mini-step"><span>3</span><div><h3>Try the menu in VRChat</h3><p>The tool creates a submenu with a control for the outfit and its renderable parts. Build/upload the avatar, then test the menu in VRChat.</p></div></article>
+          </div>
+        </div>
+
+        <div class="command-card">
+          <div class="command-card-head"><span class="command-icon" aria-hidden="true">⌘</span><div><h3>Useful commands under Avatar Outfit Toggles</h3><p>These commands are optional. Start with Create or Update Outfit Toggles.</p></div></div>
+          <div class="command-grid">
+            <div><strong>Create or Update Outfit Toggles</strong><span>Rebuild the generated controls for the selected outfit(s).</span></div>
+            <div><strong>Refresh Toggle Icons</strong><span>Make new icons after the outfit’s appearance changes.</span></div>
+            <div><strong>Clean Up Toggle Names</strong><span>Optional macOS helper for friendlier toggle names.</span></div>
+            <div><strong>Group Similar Toggles With Apple Intelligence</strong><span>Optional helper that groups related pieces together.</span></div>
+          </div>
+        </div>
+        <div class="callout callout-tip"><span class="callout-icon" aria-hidden="true">i</span><p><strong>Apple Intelligence is optional.</strong> It needs macOS 26+, an Apple Silicon Mac, and Apple Intelligence enabled. Wardrobe and ordinary toggle generation work without it.</p></div>
+      </section>
+
+      <section id="result" class="content-section section-anchor" aria-labelledby="result-title">
+        <div class="section-kicker"><span>05</span> WHAT GETS CREATED</div>
+        <div class="section-heading"><h2 id="result-title">What should I see afterwards?</h2><p>The tool does a little setup for you, but the result is meant to feel simple when you use it.</p></div>
+        <div class="result-grid">
+          <article class="result-card result-card-accent"><span class="result-symbol" aria-hidden="true">◈</span><h3>A submenu</h3><p>A folder-like menu is added to the avatar’s expression menu. With one outfit it is named after that outfit; with multiple outfits it is named <strong>Outfits</strong>.</p></article>
+          <article class="result-card"><span class="result-symbol" aria-hidden="true">◉</span><h3>One control per part</h3><p>Renderable outfit parts receive toggles, so a jacket, skirt, shoes, or accessory can be controlled separately when the hierarchy supports it.</p></article>
+          <article class="result-card"><span class="result-symbol" aria-hidden="true">↶</span><h3>A safe editing path</h3><p>Wardrobe keeps installed outfits visible while you edit. The outfit switches through the menu when the avatar is running, and Unity Undo can restore changes.</p></article>
+        </div>
+        <div class="checklist-card">
+          <div><div class="panel-label">BEFORE YOU UPLOAD</div><h3>A quick confidence check</h3></div>
+          <ul class="checklist">
+            <li><span>✓</span> The avatar in the scene is the one you intended to edit.</li>
+            <li><span>✓</span> You can find the generated submenu in the avatar hierarchy.</li>
+            <li><span>✓</span> You have tested the outfit on and off in the VRChat menu.</li>
+            <li><span>✓</span> You saved the Unity project before building the avatar.</li>
+          </ul>
+        </div>
+      </section>
+
+      <section id="troubleshooting" class="content-section section-anchor" aria-labelledby="troubleshooting-title">
+        <div class="section-kicker"><span>06</span> FIX COMMON ISSUES</div>
+        <div class="section-heading"><h2 id="troubleshooting-title">If something looks wrong</h2><p>Start with the symptom that matches what you see. Most problems are a selection or indexing issue.</p></div>
+        <div class="troubleshooting-list">
+          <details class="issue" open><summary><span class="issue-mark">?</span><span><strong>An outfit is missing from the list</strong><small>Refresh the Wardrobe catalog</small></span><span class="summary-arrow" aria-hidden="true">⌄</span></summary><div class="details-content"><p>Click <strong>Index changes</strong> in Wardrobe. If it is still missing, use <strong>Rebuild</strong> to scan the project again. Items with no renderable preview may be hidden; turn on the option to show no-preview items if you want to inspect them.</p></div></details>
+          <details class="issue"><summary><span class="issue-mark">!</span><span><strong>“Add to Avatar” does not work</strong><small>Check the install target</small></span><span class="summary-arrow" aria-hidden="true">⌄</span></summary><div class="details-content"><p>Make sure the Avatar Wardrobe window points to a scene avatar instance, not a prefab asset in the Project window. If the outfit is marked incompatible, choose a compatible variant or deliberately enable <strong>Advanced install</strong>.</p></div></details>
+          <details class="issue"><summary><span class="issue-mark">↗</span><span><strong>The toggle command is greyed out or shows an error</strong><small>Check your selection</small></span><span class="summary-arrow" aria-hidden="true">⌄</span></summary><div class="details-content"><p>Select one or more outfit roots below the avatar root. All selected objects must belong to the same avatar and need a common parent. Do not select only the avatar itself. If you selected a parent and its child, select just the parent.</p></div></details>
+          <details class="issue"><summary><span class="issue-mark">◌</span><span><strong>The outfit looks visible in Unity when I expected it to hide</strong><small>This is usually expected</small></span><span class="summary-arrow" aria-hidden="true">⌄</span></summary><div class="details-content"><p>Wardrobe intentionally keeps installed outfits visible while you edit the avatar. The generated Wardrobe menu controls which outfit is active when the avatar is running in VRChat.</p></div></details>
+          <details class="issue"><summary><span class="issue-mark">✦</span><span><strong>Apple Intelligence options are unavailable</strong><small>The core tools still work</small></span><span class="summary-arrow" aria-hidden="true">⌄</span></summary><div class="details-content"><p>Name cleaning and toggle clustering are optional helpers. They require macOS 26+, Apple Silicon, and Apple Intelligence enabled. You can rename or organize controls yourself and continue using the regular commands.</p></div></details>
+        </div>
+      </section>
+
+      <section id="glossary" class="content-section section-anchor glossary-section" aria-labelledby="glossary-title">
+        <div class="section-kicker"><span>07</span> SMALL GLOSSARY</div>
+        <div class="section-heading"><h2 id="glossary-title">A few words in plain English</h2></div>
+        <div class="glossary-grid">
+          <div><h3>Avatar instance</h3><p>The copy of your avatar placed in the current Unity scene. This is the version you edit.</p></div>
+          <div><h3>Outfit root</h3><p>The top-level object that holds a complete outfit or accessory group in the Hierarchy.</p></div>
+          <div><h3>Toggle</h3><p>A menu control that turns an avatar object on or off.</p></div>
+          <div><h3>Submenu</h3><p>A folder-like menu that opens to show more controls.</p></div>
+          <div><h3>Prefab</h3><p>A saved, reusable Unity asset. Wardrobe installs onto a scene avatar rather than changing this saved asset directly.</p></div>
+          <div><h3>Compatibility</h3><p>Wardrobe’s best estimate of whether an outfit matches the avatar it was made for.</p></div>
+        </div>
+      </section>
+
+      <footer class="site-footer">
+        <div><span class="brand-mark" aria-hidden="true">✦</span><strong>Avatar Wardrobe</strong></div>
+        <p>Made for calmer avatar editing. When in doubt, select the scene avatar, refresh the index, and use Undo.</p>
+        <a href="#top">Back to top ↑</a>
+      </footer>
+    </main>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
